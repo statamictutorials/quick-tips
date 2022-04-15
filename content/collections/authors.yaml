@@ -1,0 +1,10 @@
+title: Authors
+template: default
+layout: layout
+revisions: false
+title_format: '{firstname} {lastname}'
+slugs: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
