@@ -1,5 +1,7 @@
 <?php
 
+use Statamic\Facades\Entry;
+
 return [
 
     /*
@@ -31,10 +33,16 @@ return [
             'fields' => ['title'],
         ],
 
-        // 'blog' => [
-        //     'driver' => 'local',
-        //     'searchables' => 'collection:blog',
-        // ],
+        'articles' => [
+            'driver' => 'local',
+            'searchables' => 'collection:articles',
+            'fields' => ['title', 'author', 'slug'],
+            'transformers' => [
+                'author' => function($authorId) {
+                    return Entry::find($authorId)?->title;
+                },
+            ],
+        ],
 
     ],
 

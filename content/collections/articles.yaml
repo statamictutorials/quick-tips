@@ -1,5 +1,6 @@
 title: Articles
 revisions: false
+search_index: articles
 date_behavior:
   past: public
   future: private
